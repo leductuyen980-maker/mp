@@ -1,0 +1,34 @@
+分P编号：8
+视频标题：8 热传导方程
+内容总结：
+本次是《数学物理方程》期末突击热传导方程模块核心内容，结构化总结如下：
+
+---
+
+### 一、热传导方程基础概述
+核心知识点：
+1. 学科地位：是数学物理方程三大基本偏微分方程模型中的核心期末考点
+2. 研究对象：温度在空间中的分布、随时间的变化规律
+3. 物理基础：服从**傅里叶热传导定律**（修正原转录音译误差），定律形式为：$\boxed{Q = -K \nabla U}$，其中$Q$为热通量，$K$为介质热导率，$U(x,y,z,t)$为温度分布函数
+
+---
+
+### 二、热传导方程的分类与标准形式（期末核心考点）
+核心知识点：根据是否存在热源/热汇，分为两类标准形式：
+1. **无热源/热汇情形**
+   - 一维形式：$\boxed{\frac{\partial U}{\partial t} - \alpha^2 \frac{\partial^2 U}{\partial x^2} = 0}$，其中$\boxed{\alpha^2 = \frac{K}{\rho C_v}}$，$\alpha$为热扩散率（热扩散系数），$\rho$为介质密度，$C_v$为介质比热
+   - 三维形式：$\boxed{\frac{\partial U}{\partial t} - \alpha^2 \Delta_3 U = 0}$，其中$\Delta_3$为三维拉普拉斯算子（修正原转录音译误差），表示对x、y、z三个维度的二阶偏导求和
+2. **存在热源情形（非稳态热传导）**
+   - 一维形式：$\boxed{\frac{\partial U}{\partial t} - \alpha^2 \frac{\partial^2 U}{\partial x^2} = f(x,t)}$，其中$f = \frac{F}{\rho C_v}$，$F$为热源强度
+   - 三维形式：扩展维度至x、y、z，右端项改为$f(x,y,z,t)$即可
+
+---
+
+### 三、一维无热源热传导方程推导（期末常考推导题）
+推导步骤：
+1. **建模设定**：针对均匀介质一维热传导，取$x \sim x+\Delta x$区间的微元，横截面积为$A$，微元体积$V=A\Delta x$，介质密度$\rho$，比热$C_v$
+2. **列能量守恒关系**：单位时间内微元的内能增加率 = 流入微元的净热流量
+   - 计算内能增加率：微元内能 = 质量×比热×温度 = $(\rho A \Delta x) C_v U$，因此单位时间内能变化率为：$\boxed{\rho C_v A \Delta x \cdot \frac{\partial U}{\partial t}}$
+3. **计算净热流量**：x处左侧流入热流量为$A Q(x,t)$，x+Δx处右侧流出热流量为$A Q(x+\Delta x,t)$，净流入热流量为：$\boxed{Q_{net} = A\left[Q(x,t) - Q(x+\Delta x,t)\right]}$
+4. **变形取极限**：等式两边同除以$A \Delta x$，得$\rho C_v \frac{\partial U}{\partial t} = \frac{Q(x,t) - Q(x+\Delta x,t)}{\Delta x}$；令$\Delta x \to 0$，根据导数定义，右端项化为$\boxed{-\frac{\partial Q}{\partial x}}$
+5. **整理得标准形式**：代入傅里叶定律$Q=-K \frac{\partial U}{\partial x}$，得$\rho C_v \frac{\partial U}{\partial t} = K \frac{\partial^2 U}{\partial x^2}$，定义热扩散率$\alpha^2 = \frac{K}{\rho C_v}$，最终得到：$\boxed{\frac{\partial U}{\partial t} = \alpha^2 \frac{\partial^2 U}{\partial x^2}}$

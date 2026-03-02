@@ -1,0 +1,30 @@
+分P编号：4
+视频标题：4 波动方程
+内容总结：
+以下是该B站波动方程考点讲解内容的结构化总结，适配期末突击复习：
+
+---
+
+### 要点1：波动方程基本概念与分类（核心考点，需熟记）
+| 核心知识点 | 内容说明 |
+|-----|-----|
+| 研究对象与定义 | 用于描述弦振动问题，定义位移函数 $u(x,t)$ 表示**t时刻x位置处弦的振动位移** |
+| 齐次波动方程（自由振动） | 描述无外力作用的稳态自由振动，一维标准形式：<br>$\displaystyle \frac{\partial^2 u}{\partial t^2} - a^2 \frac{\partial^2 u}{\partial x^2} = 0$<br>参数意义：$\displaystyle a^2 = \frac{f}{\rho}$（$f$为弦张力，$\rho$为弦密度），$a$是**振动在弦上的传播速度**，表征振动在空间的传播特性 |
+| 非齐次波动方程（受迫振动） | 描述受外场作用的非稳态受迫振动，一维标准形式：<br>$\displaystyle \frac{\partial^2 u}{\partial t^2} - a^2 \frac{\partial^2 u}{\partial x^2} = f(x,t)$<br>参数意义：$\displaystyle f(x,t) = \frac{F}{\rho}$，称为力密度，物理意义为**t时刻作用于x处单位质量的横向外力** |
+| 维度扩展 | 一维仅含对x的二阶偏导，二维含对x、y的二阶偏导，三维含对x、y、z的二阶偏导，核心形式逻辑一致 |
+
+---
+
+### 要点2：一维齐次波动方程推导（期末高频考题，需掌握推导逻辑）
+推导前提：弦为均匀连续介质，满足**小形变假设**（$\displaystyle \frac{\partial u}{\partial x} \ll 1$），基于杨氏模量、牛顿第二定律推导，步骤如下：
+1. **微元应变计算**：取区间$[x, x+\Delta x]$的微元段弦，微元伸长量为$u(x+\Delta x, t) - u(x, t)$，应变（单位原长伸长量）为 $\displaystyle \varepsilon = \frac{u(x+\Delta x, t) - u(x, t)}{\Delta x}$，对$\Delta x$取极限得 $\displaystyle \varepsilon = \frac{\partial u}{\partial x}$
+2. **端点张力推导**：根据杨氏模量定义（应力=杨氏模量×应变，即$\sigma = Y \varepsilon$，应力$\sigma = T/S$，$Y$为杨氏模量，$S$为弦横截面积，$T$为张力），整理得端点张力：$\displaystyle T = YS \frac{\partial u}{\partial x}$
+3. **牛顿第二定律建立方程**：微元质量$\Delta m = \rho S \Delta x$，微元净力为左右端点张力差，由牛顿第二定律（净力=质量×加速度）得：<br>$\displaystyle YS\left( \left.\frac{\partial u}{\partial x}\right|_{x+\Delta x, t} - \left.\frac{\partial u}{\partial x}\right|_{x, t} \right) = \rho S \Delta x \cdot \frac{\partial^2 u}{\partial t^2}$
+4. **化简得标准方程**：约去横截面积$S$，两边同除以$\Delta x$，对$\Delta x$取极限，由偏导数定义整理得：<br>$\displaystyle \frac{\partial^2 u}{\partial t^2} = \frac{Y}{\rho} \frac{\partial^2 u}{\partial x^2}$，即标准一维齐次波动方程（$a^2=Y/\rho$，与定义一致）
+
+---
+
+### 要点3：期末考察重点提示
+1. 必背：不同类型、不同维度波动方程的标准形式，所有参数的物理意义
+2. 高频考点：一维波动方程的完整推导，需重点记忆小形变前提和推导逻辑
+3. 易混点区分：齐次方程对应无外力的自由稳态振动，非齐次方程对应有外力的非稳态受迫振动
